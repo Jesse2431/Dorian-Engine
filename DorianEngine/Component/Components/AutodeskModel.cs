@@ -32,17 +32,35 @@ namespace DorianEngine.Component.Components
 
         public void Setup()
         {
-
+            foreach(ModelMesh mesh in Model.Meshes)
+            {
+                foreach(BasicEffect effect in mesh.Effects)
+                {
+                    // TODO: Implement generalised lighting settings here
+                }
+            }
         }
 
         public void Draw(GraphicsDevice device)
         {
+            foreach(ModelMesh mesh in Model.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    // TODO: Pass this all onto camera instead of hardcoding
+                    effect.World = Matrix.CreateWorld(Vector3.Zero, Vector3.Forward, Vector3.Up);
+                    effect.View = Matrix.CreateLookAt(Vector3.Zero, Vector3.Forward, Vector3.Up);
+                    effect.Projection = Matrix.CreatePerspectiveFieldOfView(45f, device.DisplayMode.AspectRatio, 0.01f, 1000f);
+                }
 
+                mesh.Draw();
+            }
         }
 
         public void Update(GameTime gameTime)
         {
-
+            // TODO: Implement update stuff for the model here
+            //       Altho, are we really gonna use it?
         }
     }
 }
