@@ -1,31 +1,47 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace DorianEngine.Component.Components
 {
-    public class Transform : IComponent
+    public class Transform : BaseComponent
     {
+        // Global pos rot scl
         public Vector3 Position;
         public Vector3 Rotation;
         public Vector3 Scale;
 
+        // Local pos rot scl
+        private Vector3 LocalPosition;
+        private Vector3 LocalRotation;
+        private Vector3 LocalScale;
+
+        // Create new transform code
         public Transform(Vector3 position, Vector3 rotation, Vector3 scale)
         {
             Position = position;
             Rotation = rotation;
             Scale = scale;
-
-            Setup();
         }
 
-        public void Setup()
+        public Vector3 GetLocalPosition()
         {
-            // Do something here or completely mark it as unused
+            // TODO: Implement getting local position
+            //       LocalPosition += Parent.GlobalPosition or something, not sure
+
+            return LocalPosition;
         }
 
-        public void Update(GameTime gameTime)
+        public Vector3 GetLocalRotation()
         {
-            
+            // TODO: Implement getting local rotation
+
+            return LocalRotation;
+        }
+
+        public Vector3 GetLocalScale()
+        {
+            // TODO: Implement getting local scale
+
+            return LocalScale;
         }
     }
 }

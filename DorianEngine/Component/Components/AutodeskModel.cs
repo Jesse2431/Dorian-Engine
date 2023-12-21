@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace DorianEngine.Component.Components
 {
-    public class AutodeskModel : IDrawableComponent
+    public class AutodeskModel : BaseComponent
     {
         public string FilePath;
         public Model Model;
