@@ -1,7 +1,13 @@
-﻿namespace DorianEngine.Systems
+﻿using Microsoft.Xna.Framework;
+
+namespace DorianEngine.Systems
 {
-    public class RenderSystem
+    public class RenderSystem : BaseSystem
     {
-        // TODO: Implement RenderSystem for rendering from each entity's components that have Draw() functions
+        public override void Draw(GameTime gameTime)
+        {
+            // TODO: Implement drawing logic for the engine
+            //       make the BasicEffect's make use of the lighting for the lighting
+        }
     }
 }
