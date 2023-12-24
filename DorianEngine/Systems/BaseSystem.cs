@@ -4,6 +4,12 @@ namespace DorianEngine.Systems
 {
     public abstract class BaseSystem
     {
+        public virtual void Initialize()
+        {
+            // Base Initialize function to override
+        }
+
+
         public virtual void LoadContent()
         {
             // Base LoadContent function to override

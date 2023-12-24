@@ -10,6 +10,14 @@ namespace DorianEngine.Core
         public List<Entity> Entities = new List<Entity>();
         public List<BaseSystem> Systems = new List<BaseSystem>();
 
+        public virtual void Initialize()
+        {
+            foreach (BaseSystem system in Systems)
+            {
+                system.Initialize();
+            }
+        }
+
         public virtual void LoadContent()
         {
             foreach (BaseSystem system in Systems)
