@@ -1,14 +1,16 @@
+> This game engine is still work in progres. You are currently seeing the future iteration of the README. It might not be 100% up2date
 # Dorian Engine
 ![Dorian Engine logo](logo.png)
 A powerful C# DirectX game engine, made with MonoGame. In the end designed to be used for games similar to the Driver/Stuntman series, but due to ECS should be able to do anything.
 
 ## Using the engine
-Take a look at the `Sandbox` project, and/or refer to the Wiki for manual setup.
+Take a look at the `Sandbox` project, and/or refer to the [Wiki](https://github.com/Jesse2431/Dorian-Engine/wiki) for manual setup.
 
 ## Features
-- Fully ECS (Entity-Component-System), no hacky hard-coding
-- Complete 3D rendering, easily extendable for custom model formats
+- Fully ECS (Entity-Component-System), no hard-coding involved
+- Complete 3D rendering, easily extendable with custom model formats
 - Integrated GUI system using MonoGame's `SpriteBatch`
+- Handcrafted physics engine, designed for the Dorian Engine
 
 ## Acknowledgements
 - The engine does **not**, and never will, natively (have) support (for making) 2D games. The main effort is focused towards 3D.
