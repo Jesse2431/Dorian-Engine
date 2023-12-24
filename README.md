@@ -12,6 +12,9 @@ Take a look at the `Sandbox` project, and/or refer to the [Wiki](https://github.
 - Integrated GUI system using MonoGame's `SpriteBatch`
 - Handcrafted physics engine, designed for the Dorian Engine
 
+## Contributing
+Your contribution is highly valued! Please check [Contributing](CONTRIBUTING.md) for that. It contains a roadmap and contributing rules/guidelines.
+
 ## Acknowledgements
 - The engine does **not**, and never will, natively (have) support (for making) 2D games. The main effort is focused towards 3D.
 - The engine does **not** make use of MGCB content files for game content. Thus any Content Pipeline extensions are rendered unusable.
