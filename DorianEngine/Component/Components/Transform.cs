@@ -14,12 +14,36 @@ namespace DorianEngine.Component.Components
         private Vector3 LocalRotation;
         private Vector3 LocalScale;
 
-        // Create new transform code
+        // Create new transform code with supplied pos, rot and scl
         public Transform(Vector3 position, Vector3 rotation, Vector3 scale)
         {
             Position = position;
             Rotation = rotation;
             Scale = scale;
+        }
+
+        // Create new transform with only supplied pos and rot
+        public Transform(Vector3 position, Vector3 rotation)
+        {
+            Position = position;
+            Rotation = rotation;
+            Scale = Vector3.One;
+        }
+
+        // Create new transform with only supplied pos
+        public Transform(Vector3 position)
+        {
+            Position = position;
+            Rotation = Vector3.Zero;
+            Scale = Vector3.One;
+        }
+
+        // Create new transform with no info supplied
+        public Transform()
+        {
+            Position = Vector3.Zero;
+            Rotation = Vector3.Zero;
+            Scale = Vector3.One;
         }
 
         public Vector3 GetLocalPosition()

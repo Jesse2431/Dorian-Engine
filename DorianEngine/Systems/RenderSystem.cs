@@ -1,13 +1,25 @@
-﻿using Microsoft.Xna.Framework;
+﻿using DorianEngine.Entities;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace DorianEngine.Systems
 {
     public class RenderSystem : BaseSystem
     {
-        public override void Draw(GameTime gameTime)
+        GraphicsDevice device;
+        List<Entity> entities;
+
+        public RenderSystem(GraphicsDevice graphicsDevice, List<Entity> _entities)
         {
-            // TODO: Implement drawing logic for the engine
-            //       make the BasicEffect's make use of the lighting for the lighting
+            device = graphicsDevice;
+            entities = _entities;
+        }
+
+        public override void Draw(GameTime gameTime, GraphicsDevice device)
+        {
+            // TODO: Implement rendering code here
+            //       2D and 3D included
         }
     }
 }

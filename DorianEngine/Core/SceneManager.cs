@@ -1,6 +1,7 @@
 ﻿using DorianEngine.Entities;
 using DorianEngine.Systems;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 namespace DorianEngine.Core
@@ -34,17 +35,27 @@ namespace DorianEngine.Core
             }
         }
 
-        public virtual void Draw(GameTime gameTime)
+        public virtual void Draw(GameTime gameTime, GraphicsDevice device)
         {
             foreach (BaseSystem system in Systems)
             {
-                system.Draw(gameTime);
+                system.Draw(gameTime, device);
             }
         }
 
         public void AddSystem(BaseSystem system)
         {
             Systems.Add(system);
+        }
+
+        public void AddEntity(Entity entity)
+        {
+            Entities.Add(entity);
+        }
+
+        public void RemoveEntity(Entity entity)
+        {
+            Entities.Remove(entity);
         }
     }
 }

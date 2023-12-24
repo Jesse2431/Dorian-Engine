@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace DorianEngine.Systems
 {
@@ -20,7 +21,7 @@ namespace DorianEngine.Systems
             // Base Update function to override
         }
 
-        public virtual void Draw(GameTime gameTime)
+        public virtual void Draw(GameTime gameTime, GraphicsDevice device)
         {
             // Base Draw function to override
         }

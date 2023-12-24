@@ -1,52 +1,20 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+﻿using DorianEngine.Core;
+using Sandbox.Scenes;
 
 namespace Sandbox
 {
-    public class Game1 : Game
+    public class Game1 : GameEnvironment
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        // TODO: Do your top-level game management here.
+        //       Divide it all into different scenes and make that all go thru here
+        //       InitializeGame should be used to set the first scene to be loaded
+        //       From here or elsewhere you want to do the functionality for for example
+        //       changing scenes.
 
-        public Game1()
+        public override void InitializeGame()
         {
-            _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-            IsMouseVisible = true;
-        }
-
-        protected override void Initialize()
-        {
-            // TODO: Add your initialization logic here
-
-            base.Initialize();
-        }
-
-        protected override void LoadContent()
-        {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
-        }
-
-        protected override void Update(GameTime gameTime)
-        {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
-
-            base.Update(gameTime);
-        }
-
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
-            base.Draw(gameTime);
+            GameScene currentScene = new ExampleScene(GraphicsDevice);
+            CurrentScene = currentScene;
         }
     }
 }
