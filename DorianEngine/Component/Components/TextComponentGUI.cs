@@ -34,6 +34,7 @@ namespace DorianEngine.Component.Components
         {
             spriteBatch.Begin();
             spriteBatch.DrawString(FontFamily, Text, Position, Color);
+            spriteBatch.End();
         }
     }
 }
