@@ -1,5 +1,5 @@
 ﻿using DorianEngine.Core;
-using Sandbox.Scenes;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Sandbox
 {
@@ -11,10 +11,21 @@ namespace Sandbox
         //       From here or elsewhere you want to do the functionality for for example
         //       changing scenes.
 
-        public override void InitializeGame()
+        public override void Startup()
         {
-            GameScene currentScene = new ExampleScene(GraphicsDevice);
+            // Do initial scene loading here
+            GameScene currentScene = new Scenes.ExampleScene(GraphicsDevice);
             CurrentScene = currentScene;
+        }
+
+        public override void UpdateGame()
+        {
+            // Do global update functionality here
+        }
+
+        public override void DrawGame()
+        {
+            // Do global drawing functionality here
         }
     }
 }

@@ -7,7 +7,7 @@ namespace DorianEngine.Core
     public abstract class GameEnvironment : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public SpriteBatch _spriteBatch;
         public GameScene CurrentScene;
 
         public GameEnvironment()
@@ -20,10 +20,10 @@ namespace DorianEngine.Core
         protected override void Initialize()
         {
             base.Initialize();
-            InitializeGame();
+            Startup();
         }
 
-        public abstract void InitializeGame();
+        public abstract void Startup();
 
         protected override void LoadContent()
         {
@@ -37,15 +37,21 @@ namespace DorianEngine.Core
                 Exit();
 
             CurrentScene.Update(gameTime);
+            UpdateGame();
             base.Update(gameTime);
         }
+
+        public abstract void UpdateGame();
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             CurrentScene.Draw(gameTime, GraphicsDevice);
+            DrawGame();
             base.Draw(gameTime);
         }
+
+        public abstract void DrawGame();
     }
 }
