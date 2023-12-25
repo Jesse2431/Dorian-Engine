@@ -16,8 +16,8 @@ namespace Sandbox.Scenes
                     new Transform()
             );
 
-            // Make a new DorianModel and add that component to our entity
-            DorianModel Model = new DorianModel("Debug\\Vehicles\\1987_StarquestTSi.d3m");
+            // Make a new AutodeskModel and add that component to our entity
+            AutodeskModel Model = new AutodeskModel("Debug\\Vehicles\\1987_StarquestTSi.d3m", device);
             ExampleEntity.AddComponent(Model);
 
             // Add the entity to our entities list
