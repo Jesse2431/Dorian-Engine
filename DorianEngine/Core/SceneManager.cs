@@ -11,11 +11,11 @@ namespace DorianEngine.Core
         public List<Entity> Entities = new List<Entity>();
         public List<BaseSystem> Systems = new List<BaseSystem>();
 
-        public virtual void Initialize()
+        public virtual void Startup()
         {
             foreach (BaseSystem system in Systems)
             {
-                system.Initialize();
+                system.Startup();
             }
         }
 

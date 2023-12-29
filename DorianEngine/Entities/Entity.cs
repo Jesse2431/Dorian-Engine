@@ -35,6 +35,7 @@ namespace DorianEngine.Entities
 
             Transform = transform;
             Components = new List<BaseComponent>();
+            Children = new List<Entity>();
         }
 
         public T AddComponent<T>(T component) where T : BaseComponent

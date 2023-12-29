@@ -22,7 +22,7 @@ namespace Sandbox
                 "Dorian Engine Sandbox example project. Made by Jesse in 2023\n" +
                 "A simple showcase of what Dorian is capable of, and also the project template\n" +
                 "\n" +
-                "You may use the console for debugging essential information, without having to code your own debug panel in-game.\n" +
+                "You may use the console for logging essential information, without having to code your own debug panel in-game.\n" +
                 "The console may be disabled at any time by changing the Output Type in Properties of this project from Console Application to Windows Application.\n" +
                 "\n" +
                 "THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
@@ -37,7 +37,7 @@ namespace Sandbox
 
         public override void DrawGame(GameTime gameTime)
         {
-            // Do global drawing functionality here
+            // Do global drawing functionality here, like low-level DrawString() debug information
         }
     }
 }

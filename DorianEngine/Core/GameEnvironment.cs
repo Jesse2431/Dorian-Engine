@@ -20,6 +20,7 @@ namespace DorianEngine.Core
         protected override void Initialize()
         {
             Startup();
+            CurrentScene.Startup();
             base.Initialize();
         }
 
