@@ -19,8 +19,8 @@ namespace DorianEngine.Core
 
         protected override void Initialize()
         {
-            base.Initialize();
             Startup();
+            base.Initialize();
         }
 
         public abstract void Startup();
@@ -37,21 +37,21 @@ namespace DorianEngine.Core
                 Exit();
 
             CurrentScene.Update(gameTime);
-            UpdateGame();
+            UpdateGame(gameTime);
             base.Update(gameTime);
         }
 
-        public abstract void UpdateGame();
+        public abstract void UpdateGame(GameTime gameTime);
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             CurrentScene.Draw(gameTime, GraphicsDevice);
-            DrawGame();
+            DrawGame(gameTime);
             base.Draw(gameTime);
         }
 
-        public abstract void DrawGame();
+        public abstract void DrawGame(GameTime gameTime);
     }
 }
