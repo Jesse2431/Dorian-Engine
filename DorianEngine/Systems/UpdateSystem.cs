@@ -23,8 +23,6 @@ namespace DorianEngine.Systems
 
         public override void Update(GameTime gameTime)
         {
-            Console.WriteLine("NAHH NO WAY");
-
             foreach (Entity entity in entities)
             {
                 BehaviourScript script = entity.GetComponent<BehaviourScript>();

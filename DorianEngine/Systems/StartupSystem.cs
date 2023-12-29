@@ -1,6 +1,7 @@
 ﻿using DorianEngine.Component.Components;
 using DorianEngine.Entities;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 
 namespace DorianEngine.Systems
@@ -14,10 +15,14 @@ namespace DorianEngine.Systems
         {
             device = graphicsDevice;
             entities = _entities;
+
+            Console.WriteLine("StartupSystem initialized");
         }
 
         public override void Startup()
         {
+            Console.WriteLine("and?");
+
             foreach (Entity entity in entities)
             {
                 BehaviourScript script = entity.GetComponent<BehaviourScript>();

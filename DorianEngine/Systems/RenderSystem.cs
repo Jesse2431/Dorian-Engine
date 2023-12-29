@@ -1,7 +1,7 @@
-﻿using DorianEngine.Entities;
+﻿using DorianEngine.Component.Components;
+using DorianEngine.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
 
 namespace DorianEngine.Systems
@@ -19,7 +19,7 @@ namespace DorianEngine.Systems
 
         public override void Draw(GameTime gameTime, GraphicsDevice device)
         {
-            // TODO: Implement rendering code here.
+            // TODO: Implement rendering code here
             //       Like for 3d models and such
         }
     }
