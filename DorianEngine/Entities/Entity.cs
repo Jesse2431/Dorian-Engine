@@ -60,6 +60,10 @@ namespace DorianEngine.Entities
                 {
                     return (T)component;
                 }
+                else if (component is T)
+                {
+                    return (T)component;
+                }
             }
             return null;
         }

@@ -23,7 +23,7 @@ namespace Sandbox.Scenes
             ExampleEntity.AddComponent(Model);
 
             // Make a new BehaviourScript and add that component to our entity
-            ExampleScript Script = new ExampleScript();
+            BehaviourScript Script = new ExampleScript();
             ExampleEntity.AddComponent(Script);
 
             // Add the entity to our entities list

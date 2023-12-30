@@ -15,14 +15,10 @@ namespace DorianEngine.Systems
         {
             device = graphicsDevice;
             entities = _entities;
-
-            Console.WriteLine("StartupSystem initialized");
         }
 
         public override void Startup()
         {
-            Console.WriteLine("and?");
-
             foreach (Entity entity in entities)
             {
                 BehaviourScript script = entity.GetComponent<BehaviourScript>();
