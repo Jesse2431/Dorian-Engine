@@ -12,6 +12,13 @@ namespace Sandbox.Scenes
     {
         public ExampleScene(GraphicsDevice device) : base(device)
         {
+            // CAMERA
+            Entity camera = new Entity("CAMERA", new Transform());
+            camera.AddComponent(new Camera(device, 45f));
+
+            AddEntity(camera);
+            // END OF CAMERA
+
             // Make a new entity named ExampleEntity and give it a default transform
             Entity ExampleEntity = new Entity
             (
@@ -30,13 +37,6 @@ namespace Sandbox.Scenes
 
             // Add the entity to our entities list
             AddEntity(ExampleEntity);
-
-            // CAMERA
-            Entity camera = new Entity("CAMERA", new Transform());
-            camera.AddComponent(new Camera(device, 45f));
-
-            AddEntity(camera);
-            // END OF CAMERA
 
             // Now add the systems so that the engine can handle what we want
             AddSystem(new RenderSystem(device, Entities, Lighting));

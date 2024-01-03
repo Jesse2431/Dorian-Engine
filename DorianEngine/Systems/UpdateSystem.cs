@@ -13,6 +13,7 @@ namespace DorianEngine.Systems
 
         GraphicsDevice device;
         List<Entity> entities;
+        Camera cam;
 
         public UpdateSystem(GraphicsDevice graphicsDevice, List<Entity> _entities)
         {
@@ -46,9 +47,10 @@ namespace DorianEngine.Systems
                 Camera camera = entity.GetComponent<Camera>();
                 if(camera != null)
                 {
-                    entity.Transform.Position.Z = -5f;
+                    entity.Transform.Position.Z = 10f;
 
                     camera.Update(entity.Transform.Position);
+                    cam = camera;
                 }
 
                 // WORLDCAMERA STUFF
@@ -57,8 +59,8 @@ namespace DorianEngine.Systems
                 {
                     wavefrontModel.Model.Material.World = Matrix.CreateWorld(entity.Transform.Position, Vector3.Forward, Vector3.Up);
                     //wavefrontModel.Model.Material.World = Matrix.Identity;
-                    wavefrontModel.Model.Material.View = camera.View;
-                    wavefrontModel.Model.Material.Projection = camera.Projection;
+                    wavefrontModel.Model.Material.View = cam.View;
+                    wavefrontModel.Model.Material.Projection = cam.Projection;
                 }
             }
         }

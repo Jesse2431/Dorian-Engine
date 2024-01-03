@@ -56,13 +56,16 @@ namespace DorianEngine.Entities
         {
             foreach (BaseComponent component in Components)
             {
-                if (component is T)
+                bool test = component is T;
+
+                if (test)
                 {
                     return (T)component;
                 }
             }
             return null;
         }
+
 
         /*public BaseComponent GetComponent(BaseComponent component)
         {
