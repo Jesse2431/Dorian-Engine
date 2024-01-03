@@ -93,9 +93,9 @@ namespace DorianEngine.Component.Components
                 pass.Apply();
 
                 // TODO: Pass this all onto camera instead of hardcoding
-                Model.Material.World = Matrix.CreateWorld(new Vector3(0, 0, -5), Vector3.Forward, Vector3.Up);
-                Model.Material.View = Matrix.CreateLookAt(Vector3.Zero, Vector3.Forward, Vector3.Up);
-                Model.Material.Projection = Matrix.CreatePerspectiveFieldOfView(0.78f, device.DisplayMode.AspectRatio, 0.01f, 1000f);
+                //Model.Material.World = Matrix.CreateWorld(new Vector3(0, 0, -5), Vector3.Forward, Vector3.Up);
+                //Model.Material.View = Matrix.CreateLookAt(Vector3.Zero, Vector3.Forward, Vector3.Up);
+                //Model.Material.Projection = Matrix.CreatePerspectiveFieldOfView(0.78f, device.DisplayMode.AspectRatio, 0.01f, 1000f);
 
                 // TODO: Implement global Vertex and Index buffer for handling 3D rendering instead of DrawUserIndexedPrimitives
                 device.DrawUserIndexedPrimitives(

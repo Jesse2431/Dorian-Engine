@@ -13,7 +13,7 @@ namespace DorianEngine.Core
             // NOTE: Here we hardcode anything that must be done for essential functioning, like the camera
             //       This might need to be redone, it's gonna become a horrendous mess real fast
             Entity camera = new Entity("CAMERA", new Transform());
-            camera.AddComponent(new Camera());
+            camera.AddComponent(new Camera(device, 45f));
 
             AddEntity(camera);
         }
