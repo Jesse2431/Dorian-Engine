@@ -2,6 +2,7 @@
 using DorianEngine.Entities;
 using Microsoft.Xna.Framework.Graphics;
 using DorianEngine.Component.Components;
+using DorianEngine.Component;
 using Sandbox.Scripts;
 using DorianEngine.Systems;
 
@@ -30,9 +31,17 @@ namespace Sandbox.Scenes
             // Add the entity to our entities list
             AddEntity(ExampleEntity);
 
+            // CAMERA
+            Entity camera = new Entity("CAMERA", new Transform());
+            camera.AddComponent(new Camera(device, 45f));
+
+            AddEntity(camera);
+            // END OF CAMERA
+
             // Now add the systems so that the engine can handle what we want
             AddSystem(new RenderSystem(device, Entities, Lighting));
             AddSystem(new StartupSystem(device, Entities));
+            AddSystem(new UpdateSystem(device, Entities));
         }
     }
 }

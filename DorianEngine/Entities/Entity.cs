@@ -56,17 +56,26 @@ namespace DorianEngine.Entities
         {
             foreach (BaseComponent component in Components)
             {
-                if (component.GetType().Equals(typeof(T)))
-                {
-                    return (T)component;
-                }
-                else if (component is T)
+                if (component is T)
                 {
                     return (T)component;
                 }
             }
             return null;
         }
+
+        /*public BaseComponent GetComponent(BaseComponent component)
+        {
+            foreach(BaseComponent baseComponent in Components)
+            {
+                if(baseComponent is component)
+                {
+                    return baseComponent;
+                }
+            }
+
+            return null;
+        }*/
 
         public void AddChild(Entity child)
         {

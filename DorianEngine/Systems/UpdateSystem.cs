@@ -2,9 +2,7 @@
 using DorianEngine.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace DorianEngine.Systems
 {
@@ -57,8 +55,8 @@ namespace DorianEngine.Systems
                 WavefrontModel wavefrontModel = entity.GetComponent<WavefrontModel>();
                 if (wavefrontModel != null)
                 {
-                    //wavefrontModel.Model.Material.World = Matrix.CreateWorld(entity.Transform.Position, Vector3.Forward, camera.Up);
-                    wavefrontModel.Model.Material.World = Matrix.Identity;
+                    wavefrontModel.Model.Material.World = Matrix.CreateWorld(entity.Transform.Position, Vector3.Forward, Vector3.Up);
+                    //wavefrontModel.Model.Material.World = Matrix.Identity;
                     wavefrontModel.Model.Material.View = camera.View;
                     wavefrontModel.Model.Material.Projection = camera.Projection;
                 }
