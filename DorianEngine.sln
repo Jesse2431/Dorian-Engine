@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DorianEngine", "DorianEngin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.csproj", "{9FCC7C61-D6A5-40C7-BF6A-8B5947CAED83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DorianEditor", "DorianEditor\DorianEditor.csproj", "{B76DF7A6-DCAA-4B7B-A303-37BC6E8DE004}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9FCC7C61-D6A5-40C7-BF6A-8B5947CAED83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FCC7C61-D6A5-40C7-BF6A-8B5947CAED83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FCC7C61-D6A5-40C7-BF6A-8B5947CAED83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B76DF7A6-DCAA-4B7B-A303-37BC6E8DE004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76DF7A6-DCAA-4B7B-A303-37BC6E8DE004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76DF7A6-DCAA-4B7B-A303-37BC6E8DE004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76DF7A6-DCAA-4B7B-A303-37BC6E8DE004}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

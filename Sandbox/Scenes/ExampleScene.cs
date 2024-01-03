@@ -18,19 +18,20 @@ namespace Sandbox.Scenes
                     new Transform()
             );
 
-            // Make a new AutodeskModel and add that component to our entity
-            AutodeskModel Model = new AutodeskModel("Debug\\Vehicles\\1987_StarquestTSi.d3m", device);
-            ExampleEntity.AddComponent(Model);
+            // Make a new WavefrontModel, give it a material and add that component to our entity
+            WavefrontModel SampleModel = new WavefrontModel("Debug\\StarquestTSi_1987.obj", device);
+            SampleModel.Model.Material = new Material(device);
+            ExampleEntity.AddComponent(SampleModel);
 
             // Make a new BehaviourScript and add that component to our entity
-            BehaviourScript Script = new ExampleScript();
-            ExampleEntity.AddComponent(Script);
+            BehaviourScript SampleScript = new ExampleScript();
+            ExampleEntity.AddComponent(SampleScript);
 
             // Add the entity to our entities list
             AddEntity(ExampleEntity);
 
             // Now add the systems so that the engine can handle what we want
-            AddSystem(new RenderSystem(device, Entities));
+            AddSystem(new RenderSystem(device, Entities, Lighting));
             AddSystem(new StartupSystem(device, Entities));
         }
     }

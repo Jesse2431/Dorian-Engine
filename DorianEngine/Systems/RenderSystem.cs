@@ -1,4 +1,6 @@
-﻿using DorianEngine.Component.Components;
+﻿using DorianEngine.Component;
+using DorianEngine.Component.Components;
+using DorianEngine.Core;
 using DorianEngine.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,19 +10,35 @@ namespace DorianEngine.Systems
 {
     public class RenderSystem : BaseSystem
     {
-        GraphicsDevice device;
-        List<Entity> entities;
+        GraphicsDevice Device;
+        List<Entity> Entities;
+        Lighting Lighting;
 
-        public RenderSystem(GraphicsDevice graphicsDevice, List<Entity> _entities)
+        public RenderSystem(GraphicsDevice graphicsDevice, List<Entity> entities, Lighting lighting)
         {
-            device = graphicsDevice;
-            entities = _entities;
+            Device = graphicsDevice;
+            Entities = entities;
+            Lighting = lighting;
         }
 
-        public override void Draw(GameTime gameTime, GraphicsDevice device)
+        public override void Draw(GameTime gameTime, GraphicsDevice graphicsDevice)
         {
             // TODO: Implement rendering code here
             //       Like for 3d models and such
+            Device = graphicsDevice;
+
+            RasterizerState CullModeNone = new RasterizerState();
+            CullModeNone.CullMode = CullMode.None;
+            Device.RasterizerState = CullModeNone;
+
+            foreach(Entity entity in Entities)
+            {
+                if(entity.GetComponent<WavefrontModel>() != null)
+                {
+                    WavefrontModel model = entity.GetComponent<WavefrontModel>();
+                    model.Draw(Device);
+                }
+            }
         }
     }
 }
