@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.ComponentModel;
 
 namespace DorianEngine.Core
 {
@@ -7,12 +8,33 @@ namespace DorianEngine.Core
     //       Therefore it belongs into Core and not Components
     public class Material
     {
-        // TODO: Communicate this all back-and-forth with the lighting for the shader properties
-        //       To be done in the RenderSystem, but must be noted here
-        
         // Basic color settings
-        public Color DiffuseColor = Color.White;
-        public Color SpecularColor = Color.Gray;
+        private Color diffuseColor;
+        public Color DiffuseColor
+        {
+            get
+            {
+                return diffuseColor;
+            }
+            set
+            {
+                diffuseColor = value;
+                Effect.DiffuseColor = DiffuseColor.ToVector3();
+            }
+        }
+        private Color specularColor;
+        public Color SpecularColor
+        {
+            get
+            {
+                return specularColor;
+            }
+            set
+            {
+                diffuseColor = value;
+                Effect.DiffuseColor = specularColor.ToVector3();
+            }
+        }
 
         // Specular and opacity settings, both are 0-255
         public float SpecularIntensity = 64f;

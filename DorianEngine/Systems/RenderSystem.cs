@@ -36,6 +36,10 @@ namespace DorianEngine.Systems
                 if(entity.GetComponent<WavefrontModel>() != null)
                 {
                     WavefrontModel model = entity.GetComponent<WavefrontModel>();
+
+                    // Setup lighting for the model
+                    //model.Model.Material.
+
                     model.Draw(Device);
                 }
             }
