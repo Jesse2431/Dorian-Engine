@@ -33,7 +33,7 @@ namespace DorianEngine.Component.Components
 
         public void Load()
         {
-            // TODO: Implement OBJ loading technology here
+            // Don't mind it. I'll fix it someday
             List<Vector3> vertices = new List<Vector3>();
             List<Vector3> normals = new List<Vector3>();
             List<Vector2> textureCoords = new List<Vector2>();

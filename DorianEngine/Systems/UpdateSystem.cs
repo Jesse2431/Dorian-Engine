@@ -2,6 +2,7 @@
 using DorianEngine.Entities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace DorianEngine.Systems
@@ -15,10 +16,22 @@ namespace DorianEngine.Systems
         List<Entity> entities;
         Camera cam;
 
+        List<UpdateSystem> PluginSystems;
+
+        // TODO: De-hardcode this
+        float yaw;      // From top view, the rotation
+        float pitch;    // From side view, the rotation
+        float roll;     // From front-rear view, the rotation
+
         public UpdateSystem(GraphicsDevice graphicsDevice, List<Entity> _entities)
         {
             device = graphicsDevice;
             entities = _entities;
+
+            foreach(UpdateSystem system in PluginSystems)
+            {
+                system;
+            }
         }
 
         public override void Update(GameTime gameTime)
@@ -47,7 +60,67 @@ namespace DorianEngine.Systems
                 Camera camera = entity.GetComponent<Camera>();
                 if(camera != null)
                 {
-                    entity.Transform.Position.Z = 10f;
+                    #region DEBUG_CAMERA_FPS
+                    // CAMERA MOVEMENT IN POSITION
+                    if (Keyboard.GetState().IsKeyDown(Keys.W))
+                    {
+                        entity.Transform.Position.Z += 0.01f;
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.S))
+                    {
+                        entity.Transform.Position.Z -= 0.01f;
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.A))
+                    {
+                        entity.Transform.Position.X -= 0.01f;
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.D))
+                    {
+                        entity.Transform.Position.X += 0.01f;
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.E))
+                    {
+                        entity.Transform.Position.Y += 0.01f;
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.Q))
+                    {
+                        entity.Transform.Position.Y -= 0.01f;
+                    }
+
+                    // CAMERA MOVEMENT IN ROTATION
+                    if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                    {
+                        pitch += 0.01f;
+                        //camera.Rotation += Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
+                        camera.Rotation += Matrix.CreateRotationX(pitch);
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                    {
+                        pitch -= 0.01f;
+                        //camera.Rotation += Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
+                        camera.Rotation -= Matrix.CreateRotationX(pitch);
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                    {
+                        yaw += 0.01f;
+                        //camera.Rotation += Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
+                        camera.Rotation += Matrix.CreateRotationY(yaw);
+                    }
+
+                    if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                    {
+                        yaw -= 0.01f;
+                        //camera.Rotation += Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
+                        camera.Rotation -= Matrix.CreateRotationY(yaw);
+                    }
+                    #endregion
 
                     camera.Update(entity.Transform.Position);
                     cam = camera;
@@ -62,6 +135,11 @@ namespace DorianEngine.Systems
                     wavefrontModel.Model.Material.View = cam.View;
                     wavefrontModel.Model.Material.Projection = cam.Projection;
                 }
+            }
+
+            foreach(UpdateSystem system in PluginSystems)
+            {
+                system.Update(gameTime);
             }
         }
     }

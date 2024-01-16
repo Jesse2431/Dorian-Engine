@@ -22,6 +22,14 @@ namespace DorianEngine.Core
             Startup();
             CurrentScene.Startup();
             base.Initialize();
+
+            _graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            _graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+            _graphics.IsFullScreen = true;
+            //_graphics.GraphicsProfile = GraphicsProfile.HiDef;
+            //_graphics.PreferMultiSampling = true;
+            //GraphicsDevice.PresentationParameters.MultiSampleCount = 8;
+            //_graphics.ApplyChanges();
         }
 
         public abstract void Startup();

@@ -1,6 +1,7 @@
 ﻿using DorianEngine.Core;
 using DorianEngine.Entities;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using DorianEngine.Component.Components;
 using DorianEngine.Component;
 using Sandbox.Scripts;
@@ -38,10 +39,20 @@ namespace Sandbox.Scenes
             // Add the entity to our entities list
             AddEntity(ExampleEntity);
 
-            // Now add the systems so that the engine can handle what we want
-            AddSystem(new RenderSystem(device, Entities, Lighting));
-            AddSystem(new StartupSystem(device, Entities));
-            AddSystem(new UpdateSystem(device, Entities));
+
+            Entity Text = new Entity
+            (
+                "Text", 
+                new Transform()
+            );
+
+            Text.AddComponent(new TextComponentGUI("Hello, World!", Color.White, device, 45));
+            AddEntity(Text);
+
+
+
+            // Pass along scene setup to the engine
+            SetupScene(device);
         }
     }
 }
