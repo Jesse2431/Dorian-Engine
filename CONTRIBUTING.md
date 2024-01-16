@@ -1,31 +1,62 @@
-# Contributing to the development of the engine
-Your contribution is highly valued! Below I will discuss several things that will need to be implemented and how you may contribute. I will also provide my roadmap/planned list of features.
+# Contributing
+Your help is highly valued! Below we discuss a few things that are important to know before contributing.
 
-## How to contribute
-Contribution is most appreciated thru a fork, and then a pull request. **Please maintain a clear and understandable coding style**, the style is best summarized by MonoGame's `Game1.cs` style. <u>Avoid hardcoding at all costs!</u>
+## Coding style
+In this repository we enforce PascalCase. camelCase is used in variables gathered from function arguments. A good example on this may be found below:
+```CSharp
+namespace DorianEngine.Core
+{
+    public class Material
+    {
+        public Vector3 DiffuseColor;
+        public float Alpha;
+    
+        public Material(Vector3 diffuseColor, float alpha)
+        {
+            DiffuseColor = diffuseColor;
+            Alpha = alpha;
+        }
+    }
+}
+```
 
-**Give variables meaningful names**. Publicly accessed variables are always `UppercaseAnotherUppercase`. Variables used in privates or functions are always `lowercaseAndNowUppercase`. If deemed necessary, a function variable may have a `_thatsAnUnderscore`.
+## Way of contributing
+We most appreciate contributions directly by forking the repository, making your changes, and then making a pull request.
 
-**Comments on more advanced/technical code are preferred, but not a requirement**. I do request a clear explanation of your changes and how they contribute to the engine.
+## Contribution rules
+- Comments are not necessary, but preferred if you deem the code difficult to understand to someone else.
+- Keep external dependencies/additional libraries to a bare **minimum**.
+- Do not make use of the content manager. Everything must be done from stream/from file. No MGCB.
 
-Nested if's are preferred over any other workaround you might have in mind.
+## What to contribute on
+Things that need to be worked on, include, but are not limited to:
+- Basic physics
+	- Rigidbody component
+	- Mesh collider component
+	- Wheel component
+- Editor/Studio
+	- Scene tree
+	- Properties
+	- Solution explorer
+	- Lua IDE
+	- Scene preview
+- Default shader
+	- Diffuse
+	- Specular
+	- Bump mapping
+	- Reflections
+- Lua scripting
+	- Choose external library for Lua
+	- Translate C# functions to Lua for scripting
+- Audio component
+	- Decide if another library or not
+	- Volume
+	- Speed
+	- Paused
+	- Looped
+	- Hearing range
+	- Hearing range fade
+- Extended 3D model format
+	- FBX? 3DS? DirectX? Needs animation support
 
-<u>**Note:**</u> Pull requests that are deemed "stupid", not well-thought-out, or containing leftover mess may be denied.
-
-## What is to be done and roadmap
-The roadmap is sorted into `PLANNED`, `IN PROGRESS`, `TO BE IMPLEMENTED` and `DONE`. The first one is for planned content, the second for things that I'm currently focusing/working on, the third for things that code structure exists for but do not have implemented functionality and the latter for things that are done/implemented.
-
-- Rendering
-  - Generalised lighting: **IN PROGRESS**
-  - 3D Rendering: **IN PROGRESS**
-  - GUI Rendering: **IN PROGRESS**
-  - Custom shaders: **PLANNED**
-- Technical systems
-  - ECS base: **DONE**
-  - Scene management: **DONE**
-  - Update system: **TO BE IMPLEMENTED**
-  - Lua scripting: **PLANNED**
-- Physics
-  - Rigidbody physics: **PLANNED**
-  - Mesh collision: **PLANNED**
-  - Wheel component: **PLANNED**
+It’s important to note that the topics mentioned are not the only that need to be worked on. Approved feature requests are also things that need to be worked on.
