@@ -1,5 +1,4 @@
-> This game engine is still work in progres. You are currently seeing the future iteration of the README. It might not be 100% up2date
-# Dorian Engine
+> I really want to focus on making a game with my engine rather than making a product for another potential user. Therefore by 21/1/2024, I am archiving the repository and the project indefinitely
 ![Dorian Engine logo](logo.png)
 A powerful C# DirectX game engine, made with MonoGame. In the end designed to be used for games similar to the Driver/Stuntman series, but due to ECS should be able to do anything.
 
